@@ -14,17 +14,17 @@ Fight on multiple fronts in Holdfast: Nations At War - A competitive multiplayer
 
 Running on the *host* interface (recommended):<br/>
 ```console
-$ docker run -d --net=host --name=holdfastnaw-dedicated -e SRCDS_TOKEN={YOURTOKEN} cm2network/holdfastnaw
+$ docker run -d --net=host --name=holdfastnaw-dedicated cm2network/holdfastnaw
 ```
 
 Running using a bind mount for data persistence on container recreation:
 ```console
 $ mkdir -p $(pwd)/holdfastnaw-data
 $ chmod 777 $(pwd)/holdfastnaw-data # Makes sure the directory is writeable by the unprivileged container user
-$ docker run -d --net=host -v $(pwd)/csgo-data:/home/steam/holdfastnaw-dedicated/ --name=holdfastnaw-dedicated cm2network/holdfastnaw
+$ docker run -d --net=host -v $(pwd)/holdfastnaw-data:/home/steam/holdfastnaw-dedicated/ --name=holdfastnaw-dedicated cm2network/holdfastnaw
 ```
 
-Running multiple instances (increment SRCDS_PORT and SRCDS_TV_PORT):
+Running multiple instances:
 ```console
 $ docker run -d --net=host --name=holdfastnaw-dedicated2 cm2network/holdfastnaw
 ```
