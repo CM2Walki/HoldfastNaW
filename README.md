@@ -59,4 +59,4 @@ If you want to learn more about configuring a Holdfast: Nations At War server ch
 # Image Variants:
 
 ## `holdfastnaw:latest`
-This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is a bare-minimum hHoldfast: Nations At War dedicated server containing no 3rd party plugins.<br/>
+This is the defacto image. It is a bare-minimum Holdfast: Nations At War dedicated server containing no 3rd party plugins.<br/>
