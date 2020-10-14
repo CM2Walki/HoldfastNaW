@@ -17,7 +17,6 @@ Running on the *host* interface (recommended):<br/>
 $ docker run -d --net=host --name=holdfastnaw-dedicated cm2network/holdfastnaw
 ```
 
-Running using a bind mount for data persistence on container recreation:
 ```console
 $ mkdir -p $(pwd)/holdfastnaw-data
 $ chmod 777 $(pwd)/holdfastnaw-data # Makes sure the directory is writeable by the unprivileged container user
@@ -36,7 +35,18 @@ $ docker run -d --net=host --name=holdfastnaw-dedicated2 cm2network/holdfastnaw
 ## Environment Variables
 Feel free to overwrite these environment variables, using -e (--env): 
 ```dockerfile
-
+FPSMAX=300
+SERVER_PORT=20100
+STEAM_COM_PORT=8700
+STEAM_QUERY_PORT=27000
+SCREEN_QUALITY="Fastest"
+SCREEN_WIDTH=640
+SCREEN_HEIGHT=480
+SERVER_REGION="europe"
+SERVER_CONFIG_PATH="serverconfig_default.txt"
+SERVER_LOG_PATH="logs_output/outputlog_server.txt"
+SERVER_LOG_ARCHIVE_PATH="logs_archive/"
+STEAMCMD_UPDATE_ARGS="" (Gets appended here: +app_update [appid] [STEAMCMD_UPDATE_ARGS]; Example: "validate")
 ADDITIONAL_ARGS="" (Pass additional arguments to srcds. Make sure to escape correctly!)
 ```
 ## Config
