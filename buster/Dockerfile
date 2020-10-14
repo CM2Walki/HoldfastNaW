@@ -17,7 +17,7 @@ RUN set -x \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
 		wget=1.20.1-1.1 \
 		ca-certificates=20190110 \
-		libsqlite3-0=3.16.2-5+deb9u1 \
+		libsqlite3-0=3.27.2-3 \
 	&& mkdir -p "${STEAMAPPDIR}" \
 	&& wget "${DLURL}/master/etc/entry.sh" -O "${HOMEDIR}/entry.sh" \
 	&& chmod +x "${HOMEDIR}/entry.sh" \
