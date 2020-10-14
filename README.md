@@ -47,7 +47,7 @@ SERVER_CONFIG_PATH="serverconfig_default.txt"
 SERVER_LOG_PATH="logs_output/outputlog_server.txt"
 SERVER_LOG_ARCHIVE_PATH="logs_archive/"
 STEAMCMD_UPDATE_ARGS="" (Gets appended here: +app_update [appid] [STEAMCMD_UPDATE_ARGS]; Example: "validate")
-ADDITIONAL_ARGS="" (Pass additional arguments to srcds. Make sure to escape correctly!)
+ADDITIONAL_ARGS="" (Pass additional arguments to server binary. Make sure to escape correctly!)
 ```
 ## Config
 ```console
