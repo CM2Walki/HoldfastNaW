@@ -6,7 +6,7 @@ FROM cm2network/steamcmd:root
 LABEL maintainer="walentinlamonos@gmail.com"
 
 ENV STEAMAPPID 1424230
-ENV STEAMAPP holdfast
+ENV STEAMAPP holdfastnaw
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
 ENV DLURL https://raw.githubusercontent.com/CM2Walki/HoldfastNaW
 
