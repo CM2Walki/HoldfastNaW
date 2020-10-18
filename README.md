@@ -17,6 +17,7 @@ Running on the *host* interface (recommended):<br/>
 $ docker run -d --net=host --name=holdfastnaw-dedicated cm2network/holdfastnaw
 ```
 
+Running using a bind mount for data persistence on container recreation:
 ```console
 $ mkdir -p $(pwd)/holdfastnaw-data
 $ chmod 777 $(pwd)/holdfastnaw-data # Makes sure the directory is writeable by the unprivileged container user
