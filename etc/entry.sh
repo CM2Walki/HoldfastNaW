@@ -19,6 +19,8 @@ sed -i -e 's/server_port 20100/'"server_port ${SERVER_PORT}"'/g' \
 
 cd "${STEAMAPPDIR}"
 
+additional_args=($ADDITIONAL_ARGS)
+
 "./Holdfast NaW" -startserver \
 				-batchmode \
 				-nographics \
@@ -31,4 +33,4 @@ cd "${STEAMAPPDIR}"
 				-logFile "${SERVER_LOG_PATH}" \
 				-logArchivesDirectory "${SERVER_LOG_ARCHIVE_PATH}" \
 				-p "${SERVER_PORT}" \
-				$ADDITIONAL_ARGS
+				"${additional_args[@]}"
