@@ -21,8 +21,9 @@ RUN set -x \
 		tini=0.18.0-1 \
 	&& mkdir -p "${STEAMAPPDIR}" \
 	&& wget "${DLURL}/master/etc/entry.sh" -O "${HOMEDIR}/entry.sh" \
-	&& chmod +x "${HOMEDIR}/entry.sh" \
-	&& chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${STEAMAPPDIR}" \	
+	&& wget "${DLURL}/master/etc/tinientry.sh" -O "${HOMEDIR}/tinientry.sh" \
+	&& chmod +x "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" \
+	&& chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" "${STEAMAPPDIR}" \	
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV FPSMAX=300 \
@@ -46,7 +47,7 @@ VOLUME ${STEAMAPPDIR}
 WORKDIR ${HOMEDIR}
 
 # Replace {{ADDITIONAL_ARGS}} in entry.sh; Since passing nested bash variables to binary is cancer
-ENTRYPOINT ["tini", "-g", "--", "sed", "-i", "-e", "'s#{{ADDITIONAL_ARGS}}#'\"${ADDITIONAL_ARGS}\"'#g'", "${HOMEDIR}/entry.sh", "&&", "bash", "${HOMEDIR}/entry.sh"]
+ENTRYPOINT ["tini", "-g", "--", "${HOMEDIR}/tinientry.sh"]
 
 # Expose ports
 EXPOSE 20100 \
