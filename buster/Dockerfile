@@ -47,7 +47,7 @@ WORKDIR ${HOMEDIR}
 
 # Replace {{ADDITIONAL_ARGS}} in entry.sh; Since passing nested bash variables to binary is cancer
 ENTRYPOINT /bin/sed -i -e 's#{{ADDITIONAL_ARGS}}#'"${ADDITIONAL_ARGS}"'#g' "${HOMEDIR}/entry.sh" \
-		&& /bin/bash "${HOMEDIR}/entry.sh"
+		&& tini -- "${HOMEDIR}/entry.sh"
 
 # Expose ports
 EXPOSE 20100 \
