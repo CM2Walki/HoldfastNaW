@@ -47,7 +47,7 @@ VOLUME ${STEAMAPPDIR}
 WORKDIR ${HOMEDIR}
 
 # Replace {{ADDITIONAL_ARGS}} in entry.sh; Since passing nested bash variables to binary is cancer
-ENTRYPOINT ["tini", "-g", "--", "/home/steam/tinientry.sh"]
+ENTRYPOINT ["tini", "-p", "SIGINT", "-g", "--", "/home/steam/tinientry.sh"]
 
 # Expose ports
 EXPOSE 20100 \
