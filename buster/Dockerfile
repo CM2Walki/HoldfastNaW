@@ -18,12 +18,10 @@ RUN set -x \
 		wget=1.20.1-1.1 \
 		ca-certificates=20200601~deb10u1 \
 		libsqlite3-0=3.27.2-3+deb10u1 \
-		tini=0.18.0-1 \
 	&& mkdir -p "${STEAMAPPDIR}" \
 	&& wget "${DLURL}/master/etc/entry.sh" -O "${HOMEDIR}/entry.sh" \
-	&& wget "${DLURL}/master/etc/tinientry.sh" -O "${HOMEDIR}/tinientry.sh" \
-	&& chmod +x "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" \
-	&& chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" "${STEAMAPPDIR}" \	
+	&& chmod +x "${HOMEDIR}/entry.sh" \
+	&& chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${STEAMAPPDIR}" \	
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV FPSMAX=300 \
