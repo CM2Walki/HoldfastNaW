@@ -7,7 +7,7 @@ Fight on multiple fronts in Holdfast: Nations At War - A competitive multiplayer
 
 >  [Holdfast: NaW](https://store.steampowered.com/app/589290/Holdfast_Nations_At_War/)
 
-<img src="https://steamcdn-a.akamaihd.net/steam/apps/589290/capsule_616x353.jpg?t=1600279941" alt="logo" width="300"/></img>
+<img src="https://holdfastgame.com/Content/imgs/site/holdfast-logo.png" alt="logo" width="300"/></img>
 
 # How to use this image
 ## Hosting a simple game server
