@@ -26,7 +26,7 @@ RUN set -x \
 	&& chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" "${STEAMAPPDIR}" \	
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV FPSMAX=300 \
+ENV FPSMAX=120 \
 	SERVER_PORT=20100 \
 	STEAM_COM_PORT=8700 \
 	STEAM_QUERY_PORT=27000 \
