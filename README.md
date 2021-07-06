@@ -36,7 +36,7 @@ $ docker run -d --net=host --name=holdfastnaw-dedicated2 cm2network/holdfastnaw
 ## Environment Variables
 Feel free to overwrite these environment variables, using -e (--env): 
 ```dockerfile
-FPSMAX=300
+FPSMAX=120
 SERVER_PORT=20100
 STEAM_COM_PORT=8700
 STEAM_QUERY_PORT=27000
