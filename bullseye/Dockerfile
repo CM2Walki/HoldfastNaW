@@ -10,20 +10,20 @@ ENV STEAMAPP holdfastnaw
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
 ENV DLURL https://raw.githubusercontent.com/CM2Walki/HoldfastNaW
 
-# Create autoupdate config
-# Remove packages and tidy up
 RUN set -x \
+	# Install, update & upgrade packages
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
-		wget=1.20.1-1.1 \
-		ca-certificates=20200601~deb10u2 \
-		libsqlite3-0=3.27.2-3+deb10u1 \
-		tini=0.18.0-1 \
+		wget=1.21-1+deb11u1 \
+		ca-certificates=20210119 \
+		tini=0.19.0-1 \
 	&& mkdir -p "${STEAMAPPDIR}" \
+	# Add entry scripts
 	&& wget "${DLURL}/master/etc/entry.sh" -O "${HOMEDIR}/entry.sh" \
 	&& wget "${DLURL}/master/etc/tinientry.sh" -O "${HOMEDIR}/tinientry.sh" \
 	&& chmod +x "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" \
-	&& chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" "${STEAMAPPDIR}" \	
+	&& chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" "${STEAMAPPDIR}" \
+	# Clean up
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV FPSMAX=120 \
@@ -40,12 +40,14 @@ ENV FPSMAX=120 \
 	ADDITIONAL_ARGS="" \
 	STEAMCMD_UPDATE_ARGS=""
 
+# Switch to user
 USER ${USER}
 
 VOLUME ${STEAMAPPDIR}
 
 WORKDIR ${HOMEDIR}
 
+# Overwrite Stopsignl for graceful server exits
 STOPSIGNAL SIGINT
 
 ENTRYPOINT ["tini", "-g", "--", "/home/steam/tinientry.sh"]
