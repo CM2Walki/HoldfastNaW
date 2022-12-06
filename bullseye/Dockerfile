@@ -28,7 +28,6 @@ RUN set -x \
 
 ENV FPSMAX=120 \
 	SERVER_PORT=20100 \
-	STEAM_COM_PORT=8700 \
 	STEAM_QUERY_PORT=27000 \
 	SCREEN_QUALITY="Fastest" \
 	SCREEN_WIDTH=640 \
@@ -54,5 +53,4 @@ ENTRYPOINT ["tini", "-g", "--", "/home/steam/tinientry.sh"]
 
 # Expose ports
 EXPOSE 20100 \
-	8700 \
 	27000
