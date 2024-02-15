@@ -8,19 +8,17 @@ LABEL maintainer="walentinlamonos@gmail.com"
 ENV STEAMAPPID 1424230
 ENV STEAMAPP holdfastnaw
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
-ENV DLURL https://raw.githubusercontent.com/CM2Walki/HoldfastNaW
+
+COPY "etc/entry.sh" "${HOMEDIR}/entry.sh"
+COPY "etc/tinientry.sh" "${HOMEDIR}/tinientry.sh"
 
 RUN set -x \
 	# Install, update & upgrade packages
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
-		wget=1.21-1+deb11u1 \
-		ca-certificates=20210119 \
+		ca-certificates=20230311 \
 		tini=0.19.0-1 \
 	&& mkdir -p "${STEAMAPPDIR}" \
-	# Add entry scripts
-	&& wget "${DLURL}/master/etc/entry.sh" -O "${HOMEDIR}/entry.sh" \
-	&& wget "${DLURL}/master/etc/tinientry.sh" -O "${HOMEDIR}/tinientry.sh" \
 	&& chmod +x "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" \
 	&& chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" "${STEAMAPPDIR}" \
 	# Clean up
