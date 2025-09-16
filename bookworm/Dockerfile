@@ -24,13 +24,15 @@ RUN set -x \
 	# Clean up
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV FPSMAX=120 \
-	SERVER_PORT=20100 \
+ENV SERVER_PORT=20100 \
 	STEAM_QUERY_PORT=27000 \
-	SCREEN_QUALITY="Fastest" \
-	SCREEN_WIDTH=640 \
-	SCREEN_HEIGHT=480 \
 	SERVER_REGION="europe" \
+	SERVER_ADMIN_PASSWORD="defaultAdminPWReplace" \
+ 	SERVER_NAME="My Server" \
+	SERVER_NETWORK_BROADCAST_MODE="Standard" \
+ 	SERVER_WELCOME_MESSAGE="The Server Welcome Message" \
+ 	SERVER_INTRO_TITLE="Welcome!" \
+ 	SERVER_INTRO_BODY="This is a server fresh of the assembly line" \
 	SERVER_CONFIG_PATH="serverconfig_default.txt" \
 	SERVER_LOG_PATH="logs_output/outputlog_server.txt" \
 	SERVER_LOG_ARCHIVE_PATH="logs_archive/" \
