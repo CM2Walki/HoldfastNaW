@@ -27,10 +27,6 @@ cd "${STEAMAPPDIR}"
 "./Holdfast NaW" -startserver \
 				-batchmode \
 				-nographics \
-				-screen-width "${SCREEN_WIDTH}" \
-				-screen-height "${SCREEN_HEIGHT}" \
-				-screen-quality "${SCREEN_QUALITY}" \
-				-framerate "${FPSMAX}" \
 				--serverheadless \
 				-serverConfigFilePath "${SERVER_CONFIG_PATH}" \
 				-logFile "${SERVER_LOG_PATH}" \
