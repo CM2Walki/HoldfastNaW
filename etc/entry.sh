@@ -28,6 +28,9 @@ cd "${STEAMAPPDIR}"
 				-batchmode \
 				-nographics \
 				--serverheadless \
+				-screen-width "640" \
+				-screen-height "480" \
+				-screen-quality "Fastest" \
 				-serverConfigFilePath "${SERVER_CONFIG_PATH}" \
 				-logFile "${SERVER_LOG_PATH}" \
 				-logArchivesDirectory "${SERVER_LOG_ARCHIVE_PATH}" \
