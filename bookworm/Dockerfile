@@ -16,7 +16,7 @@ RUN set -x \
 	# Install, update & upgrade packages
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
-		ca-certificates=20230311 \
+		ca-certificates=20230311+deb12u1 \
 		tini=0.19.0-1+b3 \
 	&& mkdir -p "${STEAMAPPDIR}" \
 	&& chmod +x "${HOMEDIR}/entry.sh" "${HOMEDIR}/tinientry.sh" \
