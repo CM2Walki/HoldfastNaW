@@ -61,8 +61,11 @@ If you want to learn more about configuring a Holdfast: Nations At War server ch
 
 # Image Variants:
 
-## `holdfastnaw:latest`
-This is the defacto image. It is a bare-minimum Holdfast: Nations At War dedicated server containing no 3rd party plugins.<br/>
+## `holdfastnaw:latest`, `holdfastnaw:on-demand`
+This is the defacto image. A bare-minimum Holdfast: Nations At War dedicated server containing no 3rd party plugins. The game server files are downloaded (or updated) on container start, increasing start-up time. Ideal for static hosting in volumes or bind-mounts.<br/>
+
+## `holdfastnaw:full`
+Specialized version of `holdfastnaw:on-demand`. The game server files are pre-packaged within this image, trading storage for faster start-up times. Ideal for container orchestration tools (Kubernetes, Docker Swarm, etc.).<br/>
 
 # Contributors
 [![Contributors Display](https://badges.pufler.dev/contributors/CM2Walki/HoldfastNaW?size=50&padding=5&bots=false)](https://github.com/CM2Walki/HoldfastNaW/graphs/contributors)
