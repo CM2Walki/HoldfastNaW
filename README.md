@@ -1,13 +1,14 @@
 [![](https://img.shields.io/codacy/grade/80b3d1a6e05e440abfdc34354001b1bf.svg)](https://hub.docker.com/r/cm2network/holdfastnaw/) [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/cm2network/holdfastnaw)](https://hub.docker.com/r/cm2network/holdfastnaw/) [![Docker Stars](https://img.shields.io/docker/stars/cm2network/holdfastnaw.svg)](https://hub.docker.com/r/cm2network/holdfastnaw/) [![Docker Pulls](https://img.shields.io/docker/pulls/cm2network/holdfastnaw.svg)](https://hub.docker.com/r/cm2network/holdfastnaw/) [![](https://img.shields.io/docker/image-size/cm2network/holdfastnaw)](https://hub.docker.com/r/cm2network/holdfastnaw/) [![Discord](https://img.shields.io/discord/747067734029893653)](https://discord.gg/7ntmAwM)
 # Supported tags and respective `Dockerfile` links
--	[`latest` (*bookworm/Dockerfile*)](https://github.com/CM2Walki/holdfastnaw/blob/master/bookworm/Dockerfile)
+-	[`on-demand`, `latest` (*bookworm/Dockerfile*)](https://github.com/CM2Walki/holdfastnaw/blob/master/bookworm/Dockerfile)
+-	[`full` (*bookworm/Dockerfile*)](https://github.com/CM2Walki/holdfastnaw/blob/master/bookworm/Dockerfile)
 
 # What is Holdfast: Nations At War ?
 Fight on multiple fronts in Holdfast: Nations At War - A competitive multiplayer first and third person shooter set during the great Napoleonic Era. Charge into battle with over 150 players per server!
 
 >  [Holdfast: NaW](https://store.steampowered.com/app/589290/Holdfast_Nations_At_War/)
 
-<img src="https://holdfastgame.com/Content/imgs/site/holdfast-logo.png" alt="logo" width="300"/></img>
+<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/589290/9ed0c9a2b2db1ec48352d824329275468d2b8b0e/header.jpg" alt="logo" width="300"/></img>
 
 # How to use this image
 ## Hosting a simple game server
