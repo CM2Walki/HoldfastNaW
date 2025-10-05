@@ -1,7 +1,7 @@
 ###########################################################
 # Dockerfile that builds a HoldfastNaW Gameserver
 ###########################################################
-FROM cm2network/steamcmd:root
+FROM cm2network/steamcmd:root AS bookworm
 
 LABEL maintainer="walentinlamonos@gmail.com"
 
@@ -54,3 +54,8 @@ ENTRYPOINT ["tini", "-g", "--", "/home/steam/tinientry.sh"]
 # Expose ports
 EXPOSE 20100 \
 	27000
+
+FROM bookworm AS bookworm-full
+
+RUN set -x \
+    && bash "${STEAMCMDDIR}/steamcmd.sh" +force_install_dir "${STEAMAPPDIR}" +login anonymous +app_update "${STEAMAPPID}" +quit
