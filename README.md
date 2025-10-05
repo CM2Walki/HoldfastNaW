@@ -38,7 +38,7 @@ $ docker run -d --net=host --name=holdfastnaw-dedicated2 cm2network/holdfastnaw
 Feel free to overwrite these environment variables, using -e (--env): 
 ```dockerfile
 SERVER_PORT=20100 (UDP)
-STEAM_QUERY_PORT=27000 (UDP, Optional: Legacy A2S Query port)
+STEAM_QUERY_PORT=27000 (UDP, Optional: Legacy A2S Query port, Pass 0 to disable)
 SERVER_REGION="europe"
 SERVER_ADMIN_PASSWORD="defaultAdminPWReplace"
 SERVER_NAME="My Server"
